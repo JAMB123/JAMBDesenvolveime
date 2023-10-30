@@ -34,7 +34,9 @@ Route::post('/cadastros/{id}', [App\Http\Controllers\ControladorAnimal::class, '
 Route::get('/cadastros/cadastrar', [App\Http\Controllers\ControladorAnimal::class, 'create'])->name('novoCadastro');
 Route::post('/cadastros', [App\Http\Controllers\ControladorAnimal::class, 'store'])->name('gravaNovoCadastro');
 
+//Rotas Favoritos
 Route::get('/favoritos/{id}', [App\Http\Controllers\homeController::class, 'favoritos'])->name('favoritos');
+
 
 
 

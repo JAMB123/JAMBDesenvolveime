@@ -22,7 +22,7 @@
                                     <tbody>
                                     <tr>
                                         <td colspan="2">
-                                            <label for="nome" style="color: black; font-size: 18px"class="">E-mail:</label>
+                                            <label for="nome" style="color: black; font-size: 18px"class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
                                         </td>
                                     </tr>
                                         <tr>
@@ -36,10 +36,10 @@
                                             </span>
                                         @enderror
                         </div>
+
                     </div>
                             <div class="row mb-3">
-                                    <label for="password" class="col-md-4 col-form-label text-md-end">
-                                    </label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                                     <div class="col-md-4">
                                         <tr>

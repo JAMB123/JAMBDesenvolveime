@@ -28,12 +28,21 @@
                 <input type="text" class="form-control" id="username" placeholder="Username" required>
               </div>
                 <br>
+
               <div class="col-12">
               <img src="{{asset('storage/imagens/email.svg')}}" />
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com">
+              <label for="email" class="col-md-4 col-form-label text-md-end">Email</label>
+              <div class="col-md-6">
+                <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" required autocomplete="email" placeholder="nome@exemplo.com">
+                @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
             </div>
         </div>
+
             <br>
               <div class="col-sm-6">
               <img src="{{asset('storage/imagens/cpf.png')}}" />
@@ -49,8 +58,15 @@
             <br>
             <div class="col-6">
             <img src="{{asset('storage/imagens/chaves.png')}}" />
-              <label for="address" class="form-label">Senha</label>
-              <input type="text" class="form-control" id="address" placeholder="Senha" required>
+              <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+              <div class="col-md-6">
+              <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Senha" required>
+              @error('password')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+              </div>
             </div>
             <br>
             <div class="col-6">
@@ -61,7 +77,7 @@
             <br>
             <br>
             <div class="col-6">
-            <td><button class="btn btn-primary my-2 my-sm-0"; id="botaocad" type="submit" style="margin-right: 15px">Cadastrar</button></td>
+            <td><button class="btn btn-primary my-2 my-sm-0"; id="botaocad" type="submit" style="margin-right: 15px">{{ __('Cadastrar') }}</button></td>
             </div>
 
 @endsection
